@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: absolute;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+section {
+  height: 100vh;
+}
+.hero {
+  background-image: url("./images/desktop/image-hero.jpg");
+}
