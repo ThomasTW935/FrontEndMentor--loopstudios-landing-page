@@ -1,24 +1,155 @@
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$darkGray: hsl(0, 0%, 55%);
+$vDarkGray: hsl(0, 0%, 41%);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  font-size: 15px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 300;
+}
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}
+li {
+  list-style: none;
+}
 header {
-  position: absolute;
   nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    z-index: 99;
+    padding: 4rem 10rem;
+    width: 100%;
     ul {
       display: flex;
+      gap: 3em;
       a {
-        color: white;
+        padding: 0.3em 0;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 100%;
+          height: 3px;
+          width: 100%;
+          border-bottom: 1px solid $white;
+          transform: scaleX(0);
+          transform-origin: center;
+          transition: transform 0.5s;
+        }
+        &:hover::before {
+          transform: scaleX(1);
+        }
       }
     }
   }
 }
 section {
   height: 100vh;
+  padding: 0 10rem;
 }
 .hero {
+  position: relative;
   background-image: url("./images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  h1 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $white;
+    border: 2px solid $white;
+    font-size: 5rem;
+    width: 47%;
+    padding: 0 3.5rem;
+  }
+}
+.interactive {
+  position: relative;
+  div {
+    position: absolute;
+    top: 50%;
+  }
+  &__Image {
+    width: 54%;
+    transform: translateY(-50%);
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__Text {
+    transform: translateY(-17%);
+    background: $white;
+    color: $black;
+    left: 51.5%;
+    width: 44%;
+    padding: 7.5em;
+    h1 {
+      font-size: 3.5rem;
+      line-height: 1;
+      margin-bottom: 0.5em;
+    }
+    p {
+      color: $vDarkGray;
+      line-height: 1.4;
+    }
+  }
+}
+.creations {
+  &__Head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5em;
+    a {
+      color: $black;
+      border: 1px solid $black;
+      padding: 0.5rem 2rem;
+      height: 100%;
+      text-transform: uppercase;
+      &:hover {
+        background: $black;
+        color: $white;
+      }
+    }
+  }
+  &__List {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    li {
+      position: relative;
+    }
+    a {
+      width: 100%;
+      height: 100%;
+      background: red;
+      img {
+        width: auto;
+        height: 100%;
+      }
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 }
