@@ -1,3 +1,7 @@
+.image__Mobile {
+  display: none;
+}
+
 .nav__List--Underline {
   display: flex;
   gap: 3em;
@@ -89,27 +93,35 @@ section {
   }
 }
 .creations {
-  &__Head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5em;
-    a {
-      color: $black;
-      border: 1px solid $black;
-      padding: 0.5rem 2rem;
-      height: 100%;
-      text-transform: uppercase;
-      &:hover {
-        background: $black;
-        color: $white;
-      }
+  position: relative;
+  display: grid;
+  grid-template: 20% 1fr / repeat(2, 1fr);
+  grid-template-areas:
+    "title link"
+    "list list";
+  align-items: center;
+  gap: 5rem;
+  &__Title {
+    grid-area: title;
+  }
+  &__Link {
+    grid-area: link;
+    justify-self: right;
+    color: $black;
+    border: 1px solid $black;
+    padding: 0.75rem 1rem;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-transform: uppercase;
+    &:hover {
+      color: $white;
+      background: $black;
     }
   }
   &__List {
+    grid-area: list;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    padding-bottom: 10rem;
     gap: 1em;
     li {
       position: relative;

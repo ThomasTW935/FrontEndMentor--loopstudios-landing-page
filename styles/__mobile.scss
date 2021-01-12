@@ -4,6 +4,12 @@
   }
 }
 @media screen and (max-width: 375px) {
+  .image__Desktop {
+    display: none;
+  }
+  .image__Mobile {
+    display: block;
+  }
   html {
     font-size: $fontSize * 0.55;
   }
@@ -67,7 +73,65 @@
       position: relative;
       top: 15rem;
       width: 100%;
-      padding: 2rem 4rem;
+      padding: 3rem;
+    }
+  }
+  .interactive {
+    div {
+      position: static;
+    }
+    &__Image,
+    &__Text {
+      position: static;
+      width: 100%;
+      transform: none;
+      padding: 0;
+      text-align: center;
+      font-size: 1.7em;
+      margin-top: 10rem;
+    }
+  }
+  .creations {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template: 20% 1fr 20% / 1fr;
+    grid-template-areas:
+      "title"
+      "list"
+      "link";
+    &__Title,
+    &__Link {
+      justify-self: center;
+    }
+    &__Link {
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      font-size: 1.7em;
+    }
+    &__List {
+      justify-content: space-evenly;
+      grid-template-columns: 1fr;
+      li span {
+        bottom: 30%;
+        font-size: 2.3em;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    &__List {
+      font-size: 1.7em;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
+    }
+    .attribution {
+      text-align: center;
+      width: 25ch;
     }
   }
 }
