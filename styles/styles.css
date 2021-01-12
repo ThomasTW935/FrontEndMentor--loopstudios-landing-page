@@ -8,6 +8,7 @@
 html {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: 300;
+  font-size: 15px;
 }
 
 main {
@@ -30,19 +31,19 @@ li {
   list-style: none;
 }
 
-.navList__Underline {
+.nav__List--Underline {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 3em;
 }
 
-.navList__Underline a {
+.nav__List--Underline .nav__Link {
   padding: 0.3em 0;
   position: relative;
 }
 
-.navList__Underline a::before {
+.nav__List--Underline .nav__Link::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -59,12 +60,16 @@ li {
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
-.navList__Underline a:hover::before {
+.nav__List--Underline .nav__Link:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
 
-header nav {
+.nav__Close, .nav__Burger, .nav__List--Head {
+  display: none;
+}
+
+header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,7 +92,7 @@ section {
 
 .hero {
   position: relative;
-  background-image: url("./images/desktop/image-hero.jpg");
+  background-image: url("../images/desktop/image-hero.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -285,10 +290,6 @@ section {
   grid-area: attribution;
 }
 
-html {
-  font-size: 15px;
-}
-
 @media screen and (max-width: 1250px) {
   html {
     font-size: 9px;
@@ -297,40 +298,82 @@ html {
 
 @media screen and (max-width: 375px) {
   html {
-    font-size: 4.5px;
+    font-size: 8.25px;
   }
-  .nav {
-    background: red;
+  header {
     padding: 4rem;
   }
-  .nav__Burger {
-    height: 1rem;
-    width: 5rem;
-    background: white;
-    position: relative;
-    border-radius: 5px;
+  header .nav__Logo {
+    width: 130px;
   }
-  .nav__Burger::before, .nav__Burger::after {
-    content: "";
-    position: absolute;
+  header .nav__Logo img {
+    width: 100%;
+    height: auto;
+  }
+  header .nav__Burger {
+    display: block;
+    background: none;
+    border: none;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+  }
+  section {
+    padding: 4rem;
+  }
+  .nav--Hidden {
+    display: none;
+  }
+  .nav__Close {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .nav__List {
+    padding: 5rem 4rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    font-size: 3rem;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
     left: 0;
-    bottom: 180%;
-    height: 1rem;
-    width: 5rem;
-    z-index: 99;
-    background: white;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    z-index: 102;
+    background: black;
   }
-  .nav__Burger::before {
-    top: 180%;
-  }
-  .nav__Burger:hover + ul {
+  .nav__List--Head {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .nav ul {
-    display: none;
+  .hero {
+    background-image: url("../images/mobile/image-hero.jpg");
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero h1 {
+    position: relative;
+    top: 15rem;
+    width: 100%;
+    padding: 2rem 4rem;
   }
 }
 /*# sourceMappingURL=styles.css.map */

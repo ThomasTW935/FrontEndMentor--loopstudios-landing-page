@@ -7,7 +7,8 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel='stylesheet' href="./styles.css">
+  <link rel='stylesheet' href="./styles/styles.css">
+  <script rel='script' src='./script.js'></script>
 
   <title>Frontend Mentor | Loopstudios landing page</title>
 
@@ -25,21 +26,29 @@
 
 <body>
   <header>
-    <nav class='nav'>
-      <a href='#'><img src="./images/logo.svg" /></a>
-      <div class='nav__Burger'></div>
-      <ul class='navList__Underline'>
-        <li><a href='#'>About</a></li>
-        <li><a href='#'>Careers</a></li>
-        <li><a href='#'>Events</a></li>
-        <li><a href='#'>Products</a></li>
-        <li><a href='#'>Support</a></li>
+    <a href='#' class='nav__Logo'><img src="./images/logo.svg" /></a>
+    <button class='nav__Burger nav__Toggle' onClick='showNavList()'><img src='./images/icon-hamburger.svg' /></button>
+    <nav class='nav nav--Hidden'>
+      <ul class='nav__List nav__List--Underline'>
+        <li class='nav__List--Head'>
+          <a href='#' class='nav__Logo'><img src="./images/logo.svg" /></a>
+          <button class='nav__Close nav__Toggle' onClick='showNavList()'><img src="./images/icon-close.svg" /></button>
+        </li>
+        <li><a href='#' class='nav__Link'>About</a></li>
+        <li><a href='#' class='nav__Link'>Careers</a></li>
+        <li><a href='#' class='nav__Link'>Events</a></li>
+        <li><a href='#' class='nav__Link'>Products</a></li>
+        <li><a href='#' class='nav__Link'>Support</a></li>
       </ul>
     </nav>
   </header>
   <main>
 
     <section class='hero'>
+      <div>
+        <!-- <img class='image__Desktop' src='./images/desktop/image-hero.jpg' />
+        <img class='image__Mobile' src='./images/mobile/image-hero.jpg' /> -->
+      </div>
       <h1>Immersive experiences that deliver</h1>
     </section>
 
@@ -58,7 +67,6 @@
     <section class='creations'>
       <div class='creations__Head'>
         <h1>Our creations</h1>
-
         <a href='#'>See all</a>
       </div>
       <ul class='creations__List'>
@@ -117,11 +125,11 @@
   <footer class='footer'>
     <a href='#' class='footer__Logo'><img src="./images/logo.svg" /></a>
     <ul class='footer__List navList__Underline'>
-      <li><a href='#'>About</a></li>
-      <li><a href='#'>Careers</a></li>
-      <li><a href='#'>Events</a></li>
-      <li><a href='#'>Products</a></li>
-      <li><a href='#'>Support</a></li>
+      <li><a href='#' class='nav__Link'>About</a></li>
+      <li><a href='#' class='nav__Link'>Careers</a></li>
+      <li><a href='#' class='nav__Link'>Events</a></li>
+      <li><a href='#' class='nav__Link'>Products</a></li>
+      <li><a href='#' class='nav__Link'>Support</a></li>
     </ul>
     <div class="footer__Icons">
       <a href='#'><img src='./images/icon-facebook.svg' /></a>
