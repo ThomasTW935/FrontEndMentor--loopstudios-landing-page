@@ -8,7 +8,7 @@ html {
   font-weight: 300;
   font-size: $fontSize;
 }
-main {
+body {
   height: auto;
 }
 h1 {
@@ -24,4 +24,7 @@ a {
 }
 li {
   list-style: none;
+}
+footer {
+  margin-top: 15rem;
 }

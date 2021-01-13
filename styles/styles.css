@@ -11,7 +11,7 @@ html {
   font-size: 15px;
 }
 
-main {
+body {
   height: auto;
 }
 
@@ -29,6 +29,10 @@ a {
 
 li {
   list-style: none;
+}
+
+footer {
+  margin-top: 15rem;
 }
 
 .image__Mobile {
